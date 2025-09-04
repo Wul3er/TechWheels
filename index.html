@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWheels | Coming Soon</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Splash Content -->
+  <div class="splash-container hidden">
+    <div class="logo">
+      <img src="LogoCut.png" alt="TechWheels Logo">
+    </div>
+    <h1 class="headline">We’re Launching Soon 🚗⚡</h1>
+    <p class="subtext">Automotive Technology for the Future</p>
+  </div>
+
+  <script>
+    // Wait until page fully loads
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader-wrapper");
+      const content = document.querySelector(".splash-container");
+
+      loader.classList.add("fade-out");
+      setTimeout(() => {
+        loader.style.display = "none";
+        content.classList.remove("hidden");
+      }, 1000); // matches fade-out animation
+    });
+  </script>
+</body>
+</html>

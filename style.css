@@ -1,0 +1,128 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background with animation */
+body {
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0f29, #003366, #0077ff);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  overflow: hidden;
+}
+
+/* Loader Styles */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0f29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #00c389;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Hide splash initially */
+.hidden {
+  display: none;
+}
+
+/* Splash Content */
+.splash-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+  padding: 20px;
+  max-width: 90%;
+}
+
+/* Logo */
+.logo img {
+  width: 250px;
+  max-width: 80%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Headline */
+.headline {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 20px 0;
+  animation: slideUp 1.5s ease-in-out;
+  line-height: 1.2;
+}
+
+/* Subtext */
+.subtext {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  opacity: 0.85;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .logo img {
+    width: 180px;
+  }
+
+  .headline {
+    margin: 15px 0;
+  }
+
+  .subtext {
+    margin-top: 10px;
+  }
+}
